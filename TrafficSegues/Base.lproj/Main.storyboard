@@ -18,33 +18,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nd5-4m-4aV">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUD-VV-zTt">
+                                <rect key="frame" x="107" y="301" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTY-wr-XIw">
+                                <rect key="frame" x="48" y="401" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="To Green"/>
                                 <connections>
-                                    <segue destination="VYL-so-TC5" kind="show" id="2ja-u8-7Ay"/>
+                                    <action selector="toGreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JHF-Dp-wg0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wxv-xp-YAd">
-                                <rect key="frame" x="139" y="293" width="97" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDe-2S-Fh4">
+                                <rect key="frame" x="264" y="401" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <state key="normal" title="To Yellow"/>
+                                <connections>
+                                    <action selector="toYellow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WPt-o7-6ex"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.55385680977994345" blue="0.63785389003936521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Nd5-4m-4aV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="93t-bK-JlA"/>
-                            <constraint firstItem="Nd5-4m-4aV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qv5-YA-FFU"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Red" id="Stj-Ju-agV">
                         <barButtonItem key="backBarButtonItem" title="Go To Red" id="Vlf-Q8-6Z9"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="textField" destination="wxv-xp-YAd" id="MvV-Os-6ZX"/>
+                        <outlet property="mySwitch" destination="HUD-VV-zTt" id="fwf-tT-0ZO"/>
+                        <segue destination="ZnE-wN-GK6" kind="show" identifier="segueToGreen" id="QqB-uc-A0f"/>
+                        <segue destination="VYL-so-TC5" kind="show" identifier="segueToYellow" id="rM3-VN-ngc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -58,27 +62,14 @@
                     <view key="view" contentMode="scaleToFill" id="rZT-eO-W3F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shb-z3-bhn">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="ZnE-wN-GK6" kind="show" id="TQT-bc-eoD"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="0.9573533789164026" blue="0.57067964003201288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="shb-z3-bhn" firstAttribute="centerX" secondItem="rZT-eO-W3F" secondAttribute="centerX" id="W5w-df-Xhn"/>
-                            <constraint firstItem="shb-z3-bhn" firstAttribute="centerY" secondItem="rZT-eO-W3F" secondAttribute="centerY" id="joy-dv-Tk0"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4tq-pZ-zMU"/>
                     </view>
                     <navigationItem key="navigationItem" title="Yellow" id="C1g-R0-kA5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z8J-em-pK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1711.2" y="45.42728635682159"/>
+            <point key="canvasLocation" x="2282" y="45"/>
         </scene>
         <!--Green-->
         <scene sceneID="BIa-bk-oN2">
@@ -87,20 +78,7 @@
                     <view key="view" contentMode="scaleToFill" id="YRK-dt-Aez">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaM-Db-avb">
-                                <rect key="frame" x="160.5" y="318.5" width="54" height="30"/>
-                                <state key="normal" title="Dismiss"/>
-                                <connections>
-                                    <segue destination="bK6-4T-pqj" kind="unwind" unwindAction="unwindToRedWithUnwindSegue:" id="hHa-lA-nJG"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.50651663997260754" green="1" blue="0.51241120260867867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="xaM-Db-avb" firstAttribute="centerX" secondItem="YRK-dt-Aez" secondAttribute="centerX" id="Vuw-Sc-Jhx"/>
-                            <constraint firstItem="xaM-Db-avb" firstAttribute="centerY" secondItem="YRK-dt-Aez" secondAttribute="centerY" id="cbu-7s-gSK"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="u7T-Fy-fb8"/>
                     </view>
                     <toolbarItems/>
@@ -116,7 +94,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GcL-n5-4pD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bK6-4T-pqj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2344.8000000000002" y="44.527736131934034"/>
+            <point key="canvasLocation" x="2281" y="-655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4nE-ct-yPa">
